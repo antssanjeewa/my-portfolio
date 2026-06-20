@@ -1,4 +1,5 @@
 import type { Skill, Experience, Project } from '@/types/portfolio'
+import { Braces, Globe, Database, Cpu, Server, Terminal } from 'lucide-vue-next'
 
 export const name = 'Sameera Sanjeewa'
 export const email = 'antssanjeewa94@gmail.com'
@@ -10,8 +11,8 @@ export const bio =
 export const github = 'https://github.com/antssanjeewa'
 export const linkedin = 'https://linkedin.com/in/sameera-sanjeewa-ants'
 
-export const profile_link = '/src/assets/images/profile.png'
-export const resume_link = '/Sameera_Sanjeewa_CV.pdf'
+export const profile_link = '/images/profile.png'
+export const resume_link = '/resume/SAMEERA SANJEEWA.pdf'
 
 export const skills: Skill[] = [
   {
@@ -59,47 +60,72 @@ export const experiences: Experience[] = [
   },
 ]
 
+export const Techs = {
+  laravel: {
+    id: 'laravel',
+    label: 'Laravel',
+    icon: Braces,
+    colorClass: 'group-hover:text-[#FF2D20]',
+  },
+  vue: {
+    id: 'vue',
+    label: 'Vue.js',
+    icon: Globe,
+    colorClass: 'group-hover:text-[#4FC08D]',
+  },
+  mysql: { id: 'mysql', label: 'MySQL', icon: Database, colorClass: 'group-hover:text-[#4479A1]' },
+  tailwindcss: {
+    id: 'tailwindcss',
+    label: 'Tailwind CSS',
+    icon: Globe,
+    colorClass: 'group-hover:text-[#06B6D4]',
+  },
+  php: { id: 'php', label: 'PHP', icon: Braces, colorClass: 'group-hover:text-[#777BB4]' },
+  redis: { id: 'redis', label: 'Redis', icon: Database, colorClass: 'group-hover:text-[#DC382D]' },
+  rest_api: {
+    id: 'rest_api',
+    label: 'REST API',
+    icon: Cpu,
+    colorClass: 'group-hover:text-[#00CDAE]',
+  },
+  aws: { id: 'aws', label: 'AWS', icon: Server, colorClass: 'group-hover:text-[#FF9900]' },
+}
+
 export const projects: Project[] = [
   {
     title: 'Donation Management System',
     description:
       'A high-security platform with optimized MySQL reporting, automated receipts, and streamlined workflows.',
-    tags: ['Laravel', 'Vue.js', 'MySQL', 'Tailwind CSS'],
+    tags: [Techs.laravel, Techs.mysql, Techs.vue, Techs.tailwindcss],
   },
   {
     title: 'Bookshop Application',
     description:
       'Full-stack system featuring a real-time inventory synchronization mechanism and API-first architecture.',
-    tags: ['Laravel', 'Vue 3', 'REST API', 'Redis'],
+    tags: [Techs.laravel, Techs.vue],
   },
   {
     title: 'SIGreetings.com',
     description:
       'Scaled and maintained a cloud-based digital greeting platform with integrated production payment gateways.',
-    tags: ['PHP', 'Laravel', 'AWS', 'Payment Gateway'],
+    tags: [Techs.php, Techs.laravel, Techs.aws],
   },
   {
-    title: 'SIGreetings.com',
+    title: 'Donation Management System',
     description:
-      'Scaled and maintained a cloud-based digital greeting platform with integrated production payment gateways.',
-    tags: ['PHP', 'Laravel', 'AWS', 'Payment Gateway'],
-  },
-  {
-    title: 'SIGreetings.com',
-    description:
-      'Scaled and maintained a cloud-based digital greeting platform with integrated production payment gateways.',
-    tags: ['PHP', 'Laravel', 'AWS', 'Payment Gateway'],
-  },
-  {
-    title: 'SIGreetings.com',
-    description:
-      'Scaled and maintained a cloud-based digital greeting platform with integrated production payment gateways.',
-    tags: ['PHP', 'Laravel', 'AWS', 'Payment Gateway'],
-  },
-  {
-    title: 'SIGreetings.com',
-    description:
-      'Scaled and maintained a cloud-based digital greeting platform with integrated production payment gateways.',
-    tags: ['PHP', 'Laravel', 'AWS', 'Payment Gateway'],
+      'A high-security platform with optimized MySQL reporting, automated receipts, and streamlined workflows.',
+    longDescription:
+      'This application was custom-built to streamline non-profit donation processing while ensuring strict financial auditing. It features fully automated digital receipt token generation and multi-tier role permissions for administrative transparency.',
+    challenge:
+      'The platform needed to process heavy reporting queries across millions of rows without causing database lockups during high-traffic donation periods.',
+    features: [
+      'Implemented multi-tenant role-based access control (RBAC) for audit logs.',
+      'Integrated automated PDF receipt generation via asynchronous background queues.',
+      'Optimized complex financial aggregations using advanced MySQL indexing strategy.',
+    ],
+    impact:
+      '⚡ Reduced reporting page generation time from 8.4 seconds to 450ms through strategic query optimization and data caching.',
+    coverImage: '/images/projects/project_001.jpeg',
+    tags: [Techs.laravel, Techs.vue, Techs.mysql, Techs.tailwindcss],
   },
 ]
