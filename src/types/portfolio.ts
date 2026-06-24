@@ -17,11 +17,18 @@ export interface Project {
   title: string
   description: string
   tags: tech[]
-  longDescription?: string
   link?: string
+  role?: string
+  isPublic: boolean
+
+  longDescription?: string
+  github?: string
+  period?: string
   challenge?: string
   impact?: string
+  impactSummary?: string
   features?: string[]
+  highlights?: string[]
   coverImage?: string
 }
 

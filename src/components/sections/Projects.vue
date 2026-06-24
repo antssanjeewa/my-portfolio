@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { projects } from '@/data/portfolioData'
-import { FolderClosed, ExternalLink, Link2Icon } from 'lucide-vue-next'
+import { projects } from '@/data/projectsData'
+import { FolderClosed, ExternalLink, Github } from 'lucide-vue-next'
 
 import ProjectDialog from '@/components/UI/ProjectDialog.vue'
 const projectsList = ref(projects)
@@ -40,68 +40,101 @@ const closeModal = () => {
       <div
         v-for="project in visibleProjects"
         :key="project.title"
-        class="bg-card border border-border rounded-xl p-6 flex flex-col justify-between hover:-translate-y-1 transition-all duration-300 hover:bg-muted/10 hover:border-primary/20 shadow-sm group min-h-85"
+        class="bg-card border border-border rounded-xl flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300 hover:bg-muted/5 hover:border-primary/20 shadow-sm group overflow-hidden"
       >
-        <div>
-          <!-- Top Action Bar -->
-          <div class="flex items-center justify-between mb-6">
-            <FolderClosed class="w-7 h-7 text-primary icon-glow" />
-            <div class="flex gap-4 text-muted-foreground">
-              <a
-                v-if="project.github"
-                :href="project.github"
-                target="_blank"
-                class="hover:text-primary transition-colors"
-                title="GitHub Repository"
-              >
-                <Link2Icon class="w-5 h-5" />
-              </a>
-              <a
-                v-if="project.live"
-                :href="project.live"
-                target="_blank"
-                class="hover:text-primary transition-colors"
-                title="Live Project"
-              >
-                <ExternalLink class="w-5 h-5" />
-              </a>
-            </div>
+        <!-- Project Cover Image with Top Badges, Overlay Links & Fallback -->
+        <div
+          class="w-full aspect-video overflow-hidden border-b border-border bg-muted/20 cursor-pointer relative"
+          @click="openProjectModal(project)"
+        >
+          <img
+            v-if="project.coverImage"
+            :src="project.coverImage"
+            :alt="project.title"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <!-- Elegant Fallback if Cover Image is missing -->
+          <div
+            v-else
+            class="w-full h-full bg-linear-to-br from-slate-900 to-slate-950 flex items-center justify-center text-primary/40 group-hover:text-primary/60 transition-colors"
+          >
+            <FolderClosed class="w-12 h-12 stroke-[1.2]" />
           </div>
 
-          <!-- Title (Clickable for Modal) -->
-          <h3
-            @click="openProjectModal(project)"
-            class="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors cursor-pointer inline-flex items-center gap-1"
-          >
-            {{ project.title }}
-          </h3>
-
-          <p class="text-muted-foreground text-sm leading-relaxed mb-6 line-clamp-3">
-            {{ project.description }}
-          </p>
-        </div>
-
-        <!-- Tech Tags & Details Trigger -->
-        <div>
-          <div class="flex flex-wrap gap-2 mb-4">
+          <!-- ✨ Badges: Top-Left (Absolute positioning) -->
+          <div class="absolute top-3 left-3 flex gap-1.5 z-10 pointer-events-none">
             <span
-              v-for="tag in project.tags"
-              :key="tag"
-              class="inline-flex items-center gap-1.5 text-[11px] font-mono bg-muted/50 px-2.5 py-1 rounded-md text-muted-foreground border border-border"
-              :class="tag.colorClass"
+              v-if="project.isPublic"
+              class="text-[9px] font-mono bg-amber-500 text-slate-950 px-2 py-0.5 rounded font-bold uppercase tracking-wider shadow-sm"
             >
-              <component :is="tag.icon" class="w-3.5 h-3.5 transition-all duration-300" />
-
-              {{ tag.label }}
+              Open Source
+            </span>
+            <span
+              v-else
+              class="text-[9px] font-mono bg-blue-500 text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider shadow-sm"
+            >
+              Live
             </span>
           </div>
 
-          <button
-            @click="openProjectModal(project)"
-            class="text-xs font-mono text-primary hover:underline cursor-pointer"
-          >
-            View Details →
-          </button>
+          <div class="absolute top-2.5 right-2.5 flex gap-2 z-10" @click.stop>
+            <a
+              :href="project.link"
+              target="_blank"
+              class="w-8 h-8 rounded-full bg-slate-950/75 backdrop-blur-md border border-white/10 flex items-center justify-center text-white/90 hover:text-primary hover:scale-110 active:scale-95 transition-all shadow-md"
+              aria-label="Project Link"
+              title="Live Project"
+            >
+              <Github v-if="project.isPublic" class="w-4 h-4" />
+              <ExternalLink v-else class="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Card Content -->
+        <div class="p-4 flex-1 flex flex-col justify-between">
+          <div>
+            <!-- Title -->
+            <h3
+              @click="openProjectModal(project)"
+              class="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors cursor-pointer inline-flex items-center gap-1"
+            >
+              {{ project.title }}
+            </h3>
+
+            <p class="text-[11px] font-mono text-primary/80 mb-3 font-medium">
+              {{ project.role || 'Backend Engineer' }}
+            </p>
+
+            <!-- Description -->
+            <p class="text-muted-foreground text-sm leading-relaxed mb-4">
+              {{ project.description }}
+            </p>
+          </div>
+
+          <!-- Tech Tags & Details Trigger -->
+          <div>
+            <div class="flex flex-wrap gap-1.5 mb-4.5">
+              <span
+                v-for="tag in project.tags"
+                :key="tag.id"
+                class="inline-flex items-center gap-1 text-[10px] font-mono bg-muted/50 px-2 py-0.5 rounded border border-border/50 text-muted-foreground transition-colors duration-200"
+                :class="tag.colorClass"
+              >
+                <component :is="tag.icon" v-if="tag.icon" class="w-3 h-3" />
+                {{ tag.label }}
+              </span>
+            </div>
+
+            <div class="flex items-center justify-end">
+              <button
+                @click="openProjectModal(project)"
+                class="text-xs font-mono text-primary hover:underline cursor-pointer flex items-center gap-1 font-semibold"
+              >
+                View More →
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
