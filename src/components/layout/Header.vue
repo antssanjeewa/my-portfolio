@@ -5,7 +5,13 @@ import { resume_link } from '@/data/portfolioData'
 import { useActiveSection } from '@/composables/useActiveSection'
 import { useTheme } from '@/composables/useTheme'
 
-const { activeSection } = useActiveSection(['experience', 'skills', 'projects', 'education', 'contact'])
+const { activeSection } = useActiveSection([
+  'experience',
+  'skills',
+  'projects',
+  'education',
+  'contact',
+])
 const { isDark, toggleTheme } = useTheme()
 
 const isMobileMenuOpen = ref(false)
@@ -33,12 +39,14 @@ const smoothScroll = (e: Event) => {
 <template>
   <header class="sticky top-0 z-50 backdrop-blur-md border-b border-border/50 bg-background/80">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-
       <!-- Logo -->
-      <a href="/" @click="smoothScroll" class="font-bold text-xl tracking-wider text-primary font-mono">
+      <a
+        href="#hero"
+        @click="smoothScroll"
+        class="font-bold text-xl tracking-wider text-primary font-mono"
+      >
         { ANTS }
       </a>
-
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-6">
         <a
@@ -46,18 +54,29 @@ const smoothScroll = (e: Event) => {
           :key="link.href"
           :href="link.href"
           @click="smoothScroll"
-          class="text-sm font-medium transition-colors duration-300"
-          :class="activeSection === link.href.slice(1)
-            ? 'text-primary'
-            : 'text-muted-foreground hover:text-primary'"
+          class="relative text-sm font-medium transition-colors duration-300 py-2 group"
+          :class="
+            activeSection === link.href.slice(1)
+              ? 'text-primary'
+              : 'text-muted-foreground hover:text-primary'
+          "
         >
           {{ link.label }}
+
+          <!-- Dynamic Bottom Line Highlight -->
+          <span
+            class="absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 rounded-full"
+            :class="
+              activeSection === link.href.slice(1)
+                ? 'w-full opacity-100'
+                : 'w-0 opacity-0 group-hover:w-1/2 group-hover:opacity-50'
+            "
+          ></span>
         </a>
       </nav>
 
       <!-- Right Actions -->
       <div class="flex items-center gap-3">
-
         <!-- Theme Toggle -->
         <button
           @click="toggleTheme"
@@ -104,9 +123,11 @@ const smoothScroll = (e: Event) => {
             :href="link.href"
             @click="smoothScroll"
             class="py-3 px-4 rounded-lg text-sm font-medium transition-all duration-200"
-            :class="activeSection === link.href.slice(1)
-              ? 'text-primary bg-primary/10'
-              : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'"
+            :class="
+              activeSection === link.href.slice(1)
+                ? 'text-primary bg-primary/10'
+                : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
+            "
           >
             {{ link.label }}
           </a>

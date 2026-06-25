@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { name, bio, title, profile_link } from '@/data/portfolioData'
+import { name, bio, profile_link } from '@/data/portfolioData'
 import { useTypingEffect } from '@/composables/useTypingEffect'
 
-const titles = ['Laravel Expert.', 'Full-Stack Developer.', 'API Architect.', 'Cloud Engineer.']
+const titles = ['Software Engineer.', 'Full-Stack Developer.']
 const { typedText } = useTypingEffect(titles)
 
 const stats = [
@@ -13,8 +13,7 @@ const stats = [
 </script>
 
 <template>
-  <section class="relative min-h-[92vh] flex items-center overflow-hidden">
-
+  <section id="hero" class="relative min-h-[92vh] flex items-center overflow-hidden">
     <!-- Animated Background -->
     <div class="absolute inset-0 z-0">
       <!-- Grid Pattern -->
@@ -25,12 +24,15 @@ const stats = [
     </div>
 
     <!-- Content -->
-    <div class="relative z-10 max-w-6xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-10 py-12">
-
+    <div
+      class="relative z-10 max-w-6xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-10 py-12"
+    >
       <!-- Left: Text Content -->
       <div v-reveal class="order-2 md:order-1 flex-1">
         <p class="text-primary font-mono mb-3 tracking-widest text-sm">Hi, my name is</p>
-        <h1 class="text-5xl md:text-7xl font-extrabold text-foreground tracking-tight mb-4 uppercase">
+        <h1
+          class="text-5xl md:text-7xl font-extrabold text-foreground tracking-tight mb-4 uppercase"
+        >
           {{ name }}
         </h1>
 
@@ -46,10 +48,16 @@ const stats = [
         </p>
 
         <div class="flex flex-wrap gap-4 mb-12">
-          <a href="#projects" class="px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all shadow-lg shadow-primary/10 hover:shadow-primary/25 hover:-translate-y-0.5 active:scale-95">
+          <a
+            href="#projects"
+            class="px-6 py-3 bg-primary border border-border dark:bg-primary/50 text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all shadow-lg shadow-primary/10 hover:border-primary/40 hover:shadow-primary/25 hover:-translate-y-0.5 active:scale-95"
+          >
             View My Work ↓
           </a>
-          <a href="mailto:antssanjeewa94@gmail.com" class="px-6 py-3 border border-border rounded-lg font-semibold hover:bg-muted/50 text-foreground transition-all hover:border-primary/40 hover:-translate-y-0.5 active:scale-95">
+          <a
+            href="#contact"
+            class="px-6 py-3 border border-border rounded-lg font-semibold hover:bg-muted/50 text-foreground transition-all hover:border-primary/40 hover:-translate-y-0.5 active:scale-95"
+          >
             ✉ Get In Touch
           </a>
         </div>
@@ -57,7 +65,9 @@ const stats = [
         <!-- Stats Bar -->
         <div v-reveal="200" class="flex flex-wrap gap-6 sm:gap-10 pt-6 border-t border-border">
           <div v-for="(stat, index) in stats" :key="stat.label" v-reveal="300 + index * 100">
-            <div class="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight leading-none">
+            <div
+              class="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight leading-none"
+            >
               {{ stat.value }}
             </div>
             <div class="text-xs sm:text-sm text-muted-foreground font-medium mt-1">
@@ -68,8 +78,14 @@ const stats = [
       </div>
 
       <!-- Right: Profile Image -->
-      <div v-if="profile_link" v-reveal.delay-1 class="flex-1 order-1 md:order-2 flex justify-center md:justify-end relative group">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all duration-500"></div>
+      <div
+        v-if="profile_link"
+        v-reveal.delay-1
+        class="flex-1 order-1 md:order-2 flex justify-center md:justify-end relative group"
+      >
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all duration-500"
+        ></div>
 
         <div class="relative z-10 max-w-[320px] md:max-w-105">
           <img
@@ -79,7 +95,6 @@ const stats = [
           />
         </div>
       </div>
-
     </div>
   </section>
 </template>
@@ -97,8 +112,14 @@ const stats = [
 }
 
 @keyframes blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Animated Background Grid */
@@ -142,7 +163,12 @@ const stats = [
 }
 
 @keyframes float-orb {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(20px, -20px); }
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -20px);
+  }
 }
 </style>

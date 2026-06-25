@@ -7,7 +7,7 @@ import ProjectDialog from '@/components/UI/ProjectDialog.vue'
 const projectsList = ref(projects)
 
 const showAll = ref(false)
-const INITIAL_COUNT = 3
+const INITIAL_COUNT = 6
 
 const visibleProjects = computed(() => {
   return showAll.value ? projectsList.value : projectsList.value.slice(0, INITIAL_COUNT)
@@ -31,7 +31,10 @@ const closeModal = () => {
 
 <template>
   <section id="projects" class="max-w-6xl mx-auto px-6 py-20 border-t border-border">
-    <h2 v-reveal class="text-2xl md:text-3xl font-bold mb-12 flex items-center gap-4 text-foreground">
+    <h2
+      v-reveal
+      class="text-2xl md:text-3xl font-bold mb-12 flex items-center gap-4 text-foreground"
+    >
       <span class="text-primary font-mono text-xl">**</span> Featured Projects
     </h2>
 
@@ -66,19 +69,19 @@ const closeModal = () => {
           <div class="absolute top-3 left-3 flex gap-1.5 z-10 pointer-events-none">
             <span
               v-if="project.isPublic"
-              class="text-[9px] font-mono bg-amber-500 text-slate-950 px-2 py-0.5 rounded font-bold uppercase tracking-wider shadow-sm"
+              class="text-[9px] bg-amber-500 text-slate-950 px-2 py-0.5 rounded font-bold uppercase tracking-wider shadow-sm"
             >
               Open Source
             </span>
             <span
               v-else
-              class="text-[9px] font-mono bg-blue-500 text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider shadow-sm"
+              class="text-[9px] bg-blue-500 text-white px-2 py-0.5 rounded font-bold uppercase tracking-wider shadow-sm"
             >
               Live
             </span>
           </div>
 
-          <div class="absolute top-2.5 right-2.5 flex gap-2 z-10" @click.stop>
+          <div v-if="project.link" class="absolute top-2.5 right-2.5 flex gap-2 z-10" @click.stop>
             <a
               :href="project.link"
               target="_blank"

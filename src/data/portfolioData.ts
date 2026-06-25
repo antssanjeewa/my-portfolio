@@ -3,9 +3,9 @@ import type { Skill, Experience, Education } from '@/types/portfolio'
 export const name = 'Sameera Sanjeewa'
 export const email = 'antssanjeewa94@gmail.com'
 export const mobile = '+94 71 255 4866'
-export const title = 'Senior Software Engineer | Full-Stack Developer'
+export const title = 'Software Engineer | Full-Stack Developer'
 export const bio =
-  'Innovative Software Engineer with over 6 years of experience in architecting high-performance web applications using PHP (Laravel) and Vue.js/Nuxt.js. Expert in AWS infrastructure and real-time APIs.'
+  'Innovative Software Engineer with 6+ years of experience engineering high-performance web applications. Specializing in backend architectures with Laravel and crafting fluid user interfaces with Vue.js. Focused on building secure, scalable enterprise systems, optimizing complex databases, and writing clean, future-proof code.'
 
 export const github = 'https://github.com/antssanjeewa'
 export const linkedin = 'https://linkedin.com/in/sameera-sanjeewa-ants'
@@ -16,19 +16,26 @@ export const resume_link = '/resume/SAMEERA SANJEEWA.pdf'
 export const skills: Skill[] = [
   {
     category: 'Languages',
-    items: ['PHP (7.x, 8.x)', 'JavaScript (ES6+)', 'TypeScript', 'Dart', 'Python'],
+    items: ['PHP (7.x, 8.x)', 'JavaScript (ES6+)', 'TypeScript', 'Java', 'Python'],
   },
   {
     category: 'Frameworks & State',
-    items: ['Laravel (Expert)', 'Vue.js 3', 'Nuxt.js', 'Pinia / Vuex', 'Inertia.js', 'Flutter'],
+    items: ['Laravel', 'Vue.js', 'React.js', 'Pinia / Vuex', 'Inertia.js', 'Flutter'],
   },
   {
     category: 'Backend & Cloud',
-    items: ['RESTful APIs', 'AWS (EC2, S3, RDS, CloudFront)', 'Docker', 'CI/CD (GitHub Actions)', 'Nginx'],
+    items: ['RESTful APIs', 'AWS (EC2, S3)', 'Docker', 'CI/CD (GitHub Actions)', 'Nginx'],
   },
   {
     category: 'Databases & Quality Assurance',
-    items: ['MySQL (Optimization)', 'Redis', 'TDD (Pest, PHPUnit)', 'E2E (Playwright)', 'Git', 'Clean Architecture'],
+    items: [
+      'MySQL (Optimization)',
+      'Redis',
+      'TDD (Pest, PHPUnit)',
+      'E2E (Playwright, Dusk)',
+      'Git',
+      'Clean Architecture',
+    ],
   },
 ]
 
@@ -85,4 +92,3 @@ export const education: Education[] = [
     year: '2015',
   },
 ]
-

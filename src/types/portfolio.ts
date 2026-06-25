@@ -20,14 +20,15 @@ export interface Education {
   year: string
 }
 
-
 export interface Project {
   title: string
   description: string
+  coverImage?: string
   tags: tech[]
   link?: string
   role?: string
   isPublic: boolean
+  highlights?: string[]
 
   longDescription?: string
   github?: string
@@ -36,8 +37,6 @@ export interface Project {
   impact?: string
   impactSummary?: string
   features?: string[]
-  highlights?: string[]
-  coverImage?: string
 }
 
 export interface tech {

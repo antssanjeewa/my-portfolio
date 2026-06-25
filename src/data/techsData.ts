@@ -1,36 +1,168 @@
-import { Braces, Globe, Database, Cpu, Server, Bug } from 'lucide-vue-next'
+import {
+  Flame, // Laravel
+  Compass, // Vue / Frontend
+  Triangle, // Next.js
+  Layers, // Vuetify / Frontend Components
+  Database, // Databases (MySQL, PostgreSQL)
+  Wind, // Tailwind CSS
+  Code2, // Languages / APIs (PHP, TypeScript, REST API)
+  Zap, // Redis
+  Workflow, // State Management (Vuex)
+  Cloud, // Cloud (AWS)
+  Link2, // Inertia.js
+  Bug, // Testing (Pest)
+  Eye, // Testing/Automation (Playwright, Laravel Dusk)
+  Server, // Web Servers (Nginx)
+  Atom, // React
+  Box, // Containers (Docker)
+  GitBranch, // Version Control (Git)
+  FileCode, // Runtime / Environments (Node.js)
+} from 'lucide-vue-next'
 
 export const Techs = {
+  // --- Core Frameworks & Languages ---
+  php: {
+    id: 'php',
+    label: 'PHP',
+    icon: Code2,
+    colorClass: 'group-hover:text-[#777BB4]', // Official PHP Purple
+  },
   laravel: {
     id: 'laravel',
     label: 'Laravel',
-    icon: Braces,
-    colorClass: 'group-hover:text-[#FF2D20]',
+    icon: Flame,
+    colorClass: 'group-hover:text-[#FF2D20]', // Official Laravel Red
   },
+  typescript: {
+    id: 'typescript',
+    label: 'TypeScript',
+    icon: Code2,
+    colorClass: 'group-hover:text-[#3178C6]', // Official TS Blue
+  },
+
+  // --- Frontend Frameworks & Libraries ---
   vue: {
     id: 'vue',
     label: 'Vue.js',
-    icon: Globe,
-    colorClass: 'group-hover:text-[#4FC08D]',
+    icon: Compass,
+    colorClass: 'group-hover:text-[#4FC08D]', // Official Vue Green
   },
-  mysql: { id: 'mysql', label: 'MySQL', icon: Database, colorClass: 'group-hover:text-[#4479A1]' },
+  react: {
+    id: 'react',
+    label: 'React',
+    icon: Atom,
+    colorClass: 'group-hover:text-[#61DAFB]', // Official React Cyan
+  },
+  next: {
+    id: 'next',
+    label: 'Next.js',
+    icon: Triangle,
+    colorClass: 'group-hover:text-[#000000] dark:group-hover:text-[#FFFFFF]', // Black/White
+  },
+  vuetify: {
+    id: 'vuetify',
+    label: 'Vuetify',
+    icon: Layers,
+    colorClass: 'group-hover:text-[#1867C0]', // Official Vuetify Blue
+  },
   tailwindcss: {
     id: 'tailwindcss',
     label: 'Tailwind CSS',
-    icon: Globe,
-    colorClass: 'group-hover:text-[#06B6D4]',
+    icon: Wind,
+    colorClass: 'group-hover:text-[#06B6D4]', // Official Tailwind Cyan
   },
-  php: { id: 'php', label: 'PHP', icon: Braces, colorClass: 'group-hover:text-[#777BB4]' },
-  redis: { id: 'redis', label: 'Redis', icon: Database, colorClass: 'group-hover:text-[#DC382D]' },
+
+  // --- Databases & Caching ---
+  mysql: {
+    id: 'mysql',
+    label: 'MySQL',
+    icon: Database,
+    colorClass: 'group-hover:text-[#4479A1]', // Official MySQL Blue
+  },
+  postgresSql: {
+    id: 'postgresSql',
+    label: 'PostgreSQL',
+    icon: Database,
+    colorClass: 'group-hover:text-[#4169E1]', // Official Postgres Blue
+  },
+  redis: {
+    id: 'redis',
+    label: 'Redis',
+    icon: Zap,
+    colorClass: 'group-hover:text-[#DC382D]', // Official Redis Red
+  },
+
+  // --- Architecture & State Management ---
+  inertia: {
+    id: 'inertia',
+    label: 'Inertia.js',
+    icon: Link2,
+    colorClass: 'group-hover:text-[#9553E6]', // Official Inertia Purple
+  },
+  vuex: {
+    id: 'vuex',
+    label: 'Vuex',
+    icon: Workflow,
+    colorClass: 'group-hover:text-[#4FC08D]', // Vue Green
+  },
   rest_api: {
     id: 'rest_api',
     label: 'REST API',
-    icon: Cpu,
-    colorClass: 'group-hover:text-[#00CDAE]',
+    icon: Code2,
+    colorClass: 'group-hover:text-[#00CDAE]', // Clean Teal
   },
-  aws: { id: 'aws', label: 'AWS', icon: Server, colorClass: 'group-hover:text-[#FF9900]' },
-  typescript: { id: 'typescript', label: 'TypeScript', icon: Cpu, colorClass: 'group-hover:text-[#00CDAE]' },
-  inertia: { id: 'inertia', label: 'Inertia.js', icon: Cpu, colorClass: 'group-hover:text-[#00CDAE]' },
-  testing: { id: 'testing', label: 'Pest', icon: Bug, colorClass: 'group-hover:text-[#00CDAE]' },
-  playwright: { id: 'playwright', label: 'Playwright', icon: Bug, colorClass: 'group-hover:text-[#00CDAE]' },
+
+  // --- DevOps & Infrastructure ---
+  nginx: {
+    id: 'nginx',
+    label: 'Nginx',
+    icon: Server,
+    colorClass: 'group-hover:text-[#009639]', // Official Nginx Green
+  },
+  aws: {
+    id: 'aws',
+    label: 'AWS',
+    icon: Cloud,
+    colorClass: 'group-hover:text-[#FF9900]', // Official AWS Orange
+  },
+  docker: {
+    id: 'docker',
+    label: 'Docker',
+    icon: Box,
+    colorClass: 'group-hover:text-[#2496ED]', // Official Docker Blue
+  },
+
+  // --- Testing Tools ---
+  testing: {
+    id: 'testing',
+    label: 'Pest',
+    icon: Bug,
+    colorClass: 'group-hover:text-[#00CDAE]', // Pest Cyan
+  },
+  playwright: {
+    id: 'playwright',
+    label: 'Playwright',
+    icon: Eye,
+    colorClass: 'group-hover:text-[#2EAD33]', // Official Playwright Green
+  },
+  dusk: {
+    id: 'dusk',
+    label: 'Laravel Dusk',
+    icon: Eye,
+    colorClass: 'group-hover:text-[#E44B34]', // Dusk Amber/Red
+  },
+
+  // --- Additional Core Dev Tools ---
+  git: {
+    id: 'git',
+    label: 'Git',
+    icon: GitBranch,
+    colorClass: 'group-hover:text-[#F05032]', // Official Git Orange
+  },
+  nodejs: {
+    id: 'nodejs',
+    label: 'Node.js',
+    icon: FileCode,
+    colorClass: 'group-hover:text-[#339933]', // Official Node Green
+  },
 }
