@@ -17,6 +17,10 @@ import {
   Box, // Containers (Docker)
   GitBranch, // Version Control (Git)
   FileCode, // Runtime / Environments (Node.js)
+  Layout,
+  FlameIcon,
+  Video,
+  Smartphone,
 } from 'lucide-vue-next'
 
 export const Techs = {
@@ -32,6 +36,12 @@ export const Techs = {
     label: 'Laravel',
     icon: Flame,
     colorClass: 'group-hover:text-[#FF2D20]', // Official Laravel Red
+  },
+  blade: {
+    id: 'blade',
+    label: 'Blade',
+    icon: Layout,
+    colorClass: 'group-hover:text-[#FF2D20]',
   },
   typescript: {
     id: 'typescript',
@@ -70,6 +80,12 @@ export const Techs = {
     label: 'Tailwind CSS',
     icon: Wind,
     colorClass: 'group-hover:text-[#06B6D4]', // Official Tailwind Cyan
+  },
+  flutter: {
+    id: 'flutter',
+    label: 'Flutter',
+    icon: Smartphone,
+    colorClass: 'group-hover:text-[#02569B]',
   },
 
   // --- Databases & Caching ---
@@ -164,5 +180,23 @@ export const Techs = {
     label: 'Node.js',
     icon: FileCode,
     colorClass: 'group-hover:text-[#339933]', // Official Node Green
+  },
+  firebase: {
+    id: 'firebase',
+    label: 'Firebase DB',
+    icon: FlameIcon,
+    colorClass: 'group-hover:text-[#FFCA28]',
+  },
+  supabase: {
+    id: 'supabase',
+    label: 'Supabase DB',
+    icon: FlameIcon,
+    colorClass: 'group-hover:text-[#FFCA28]',
+  },
+  agora: {
+    id: 'agora',
+    label: 'Agora SDK',
+    icon: Video,
+    colorClass: 'group-hover:text-[#3AB0FF]',
   },
 }

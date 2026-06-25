@@ -50,7 +50,7 @@ const stats = [
         <div class="flex flex-wrap gap-4 mb-12">
           <a
             href="#projects"
-            class="px-6 py-3 bg-primary border border-border dark:bg-primary/50 text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all shadow-lg shadow-primary/10 hover:border-primary/40 hover:shadow-primary/25 hover:-translate-y-0.5 active:scale-95"
+            class="px-6 py-3 bg-primary border border-border dark:bg-primary/60 text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-all shadow-lg shadow-primary/10 hover:border-primary/40 hover:shadow-primary/25 hover:-translate-y-0.5 active:scale-95"
           >
             View My Work ↓
           </a>

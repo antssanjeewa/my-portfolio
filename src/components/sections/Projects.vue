@@ -149,11 +149,7 @@ const closeModal = () => {
         @click="showAll = !showAll"
         class="px-6 py-2.5 border border-border rounded-lg font-mono text-sm font-medium hover:bg-muted/50 text-foreground transition-all cursor-pointer shadow-sm hover:border-primary/30"
       >
-        {{
-          showAll
-            ? 'Show Less'
-            : `View More (${projectsList.length - INITIAL_COUNT} Older Projects)`
-        }}
+        {{ showAll ? 'Show Less' : `View More (${projectsList.length - INITIAL_COUNT})` }}
       </button>
     </div>
 
