@@ -10,7 +10,7 @@ const bioVal = ref<string>(bio)
 <template>
   <section class="min-h-[90vh] max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between py-12">
 
-    <div class="order-2 md:order-1 text-left">
+    <div v-reveal class="order-2 md:order-1 text-left">
       <p class="text-primary font-mono mb-3 tracking-widest text-sm">Hi, my name is</p>
       <h1 class="text-5xl md:text-7xl font-extrabold text-foreground tracking-tight mb-4 uppercase">
         {{ nameVal }}
@@ -31,7 +31,7 @@ const bioVal = ref<string>(bio)
       </div>
     </div>
 
-    <div v-if="profile_link" class="flex-1 order-1 md:order-2 flex justify-center md:justify-end relative group">
+    <div v-if="profile_link" v-reveal.delay-1 class="flex-1 order-1 md:order-2 flex justify-center md:justify-end relative group">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all duration-500"></div>
 
       <div class="relative z-10 max-w-[320px] md:max-w-105">

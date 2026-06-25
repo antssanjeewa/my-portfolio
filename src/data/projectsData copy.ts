@@ -46,6 +46,48 @@ export const projects: Project[] = [
       Techs.testing,
     ],
   },
+  {
+    title: 'Online Payment Gateway Platform',
+    isPublic: true,
+    role: 'Senior Software Engineer',
+    period: '2024',
+    coverImage: '/images/projects/payment_gateway.jpeg', // "Screenshot From 2026-06-24 21-27-03.png" හි දැක්වෙන Shraddha Media Network Donation UI එක සඳහා
+    link: 'https://donate.shraddha.lk', // හෝ අදාළ සැබෑ URL එක
+    github: 'https://github.com/antssanjeewa/payment-gateway-app',
+
+    // 🔹 Description: ව්‍යාපෘතිය ගැන ඉතාමත් සරල හඳුන්වාදීමක්
+    description:
+      'A secure online payment integration platform developed for Shraddha Media Network to process digital donations through the Sampath Bank Paycorp gateway.',
+
+    // 🔹 Highlights: කළ ප්‍රධාන දේවල් ඉතාමත් සරලව (Bullet points)
+    highlights: [
+      'Integrated Sampath Bank Paycorp payment API using secure Guzzle HTTP clients.',
+      'Built a dynamic and responsive multi-currency donation UI with Vue 3 and Inertia.js.',
+      'Secured public payment forms against bot attacks using reCAPTCHA v3 integration.',
+      'Automated transactional browser testing using Laravel Dusk suites.',
+      'Configured real-time error tracking and application monitoring with Sentry Laravel.',
+      'Implemented clean alert architectures using SweetAlert2 for user payment feedback.',
+    ],
+
+    // 🔹 Impact Summary: ප්‍රධාන තාක්ෂණික/ව්‍යාපාරික ජයග්‍රහණය
+    impactSummary: 'Secured automated donation processing with zero-error bank API integration.',
+
+    // 🔹 Modal (ProjectDialog) එක ඇතුළත දිගුව පෙන්වීම සඳහා ඉතිරි දත්ත:
+    longDescription:
+      'A production-grade donation platform engineered for Shraddha Media Network. The system handles end-to-end digital payment lifecycles, securely connecting frontend donor inputs with the Sampath Bank Paycorp API. It features multi-currency processing (USD, LKR), real-time input validations, error state boundaries, and detailed transaction monitoring backends.',
+    challenge:
+      'Safely orchestrating sensitive bank API callbacks and webhooks, preventing fraudulent double-submissions on slow connections, and maintaining high availability during peak live broadcast donation drives.',
+    features: [
+      'Engineered secure server-to-server API communication workflows with Sampath Paycorp via GuzzleHTTP.',
+      'Designed a reactive Vue 3 frontend form integrated seamlessly with Laravel Jetstream and Inertia.js.',
+      'Wrote comprehensive end-to-end user-journey tests using Laravel Dusk to validate checkout flows.',
+      'Integrated reCAPTCHA v3 silently to ensure spam protection without degrading donor user experience.',
+      'Utilized Excel data exports for non-technical finance teams to review transaction ledgers easily.',
+    ],
+    impact:
+      '⚡ Successfully processed thousands of secure donations with zero transactional discrepancies, mitigated automated bot submissions entirely, and established a bulletproof rollback mechanism for failed API handshakes.',
+    tags: [Techs.laravel, Techs.vue, Techs.inertia, Techs.tailwindcss, Techs.testing],
+  },
   // {
   //   title: 'Donation Management System',
   //   role: 'Full Stack Developer',

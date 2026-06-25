@@ -31,15 +31,16 @@ const closeModal = () => {
 
 <template>
   <section id="projects" class="max-w-6xl mx-auto px-6 py-20 border-t border-border">
-    <h2 class="text-2xl md:text-3xl font-bold mb-12 flex items-center gap-4 text-foreground">
+    <h2 v-reveal class="text-2xl md:text-3xl font-bold mb-12 flex items-center gap-4 text-foreground">
       <span class="text-primary font-mono text-xl">**</span> Featured Projects
     </h2>
 
     <!-- Projects Grid Layout -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
-        v-for="project in visibleProjects"
+        v-for="(project, index) in visibleProjects"
         :key="project.title"
+        v-reveal="index * 100"
         class="bg-card border border-border rounded-xl flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300 hover:bg-muted/5 hover:border-primary/20 shadow-sm group overflow-hidden"
       >
         <!-- Project Cover Image with Top Badges, Overlay Links & Fallback -->
@@ -140,7 +141,7 @@ const closeModal = () => {
     </div>
 
     <!-- View More / View Less Button -->
-    <div v-if="projectsList.length > INITIAL_COUNT" class="flex justify-center mt-12">
+    <div v-if="projectsList.length > INITIAL_COUNT" v-reveal class="flex justify-center mt-12">
       <button
         @click="showAll = !showAll"
         class="px-6 py-2.5 border border-border rounded-lg font-mono text-sm font-medium hover:bg-muted/50 text-foreground transition-all cursor-pointer shadow-sm hover:border-primary/30"
