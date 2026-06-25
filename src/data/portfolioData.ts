@@ -1,4 +1,4 @@
-import type { Skill, Experience } from '@/types/portfolio'
+import type { Skill, Experience, Education } from '@/types/portfolio'
 
 export const name = 'Sameera Sanjeewa'
 export const email = 'antssanjeewa94@gmail.com'
@@ -58,3 +58,31 @@ export const experiences: Experience[] = [
     ],
   },
 ]
+
+export const education: Education[] = [
+  {
+    type: 'Undergraduate Degree',
+    degree: 'BSc (Eng) in Computer Engineering',
+    institution: 'University of Peradeniya, Sri Lanka',
+    year: '2015 – 2019',
+  },
+  {
+    type: 'Certification',
+    degree: 'Full Stack Web Development',
+    institution: 'University of Moratuwa × DP Education',
+    year: '2022',
+  },
+  {
+    type: 'Certification',
+    degree: 'Flutter Mobile Development',
+    institution: 'Franklin Training Institute',
+    year: '2022',
+  },
+  {
+    type: 'Certification',
+    degree: 'OCJP — Oracle Certified Java Professional',
+    institution: 'Dakma Certification Center, Matara',
+    year: '2015',
+  },
+]
+

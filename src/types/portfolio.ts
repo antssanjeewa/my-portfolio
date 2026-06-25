@@ -13,6 +13,14 @@ export interface Experience {
   achievements: string[]
 }
 
+export interface Education {
+  type: string
+  degree: string
+  institution: string
+  year: string
+}
+
+
 export interface Project {
   title: string
   description: string
