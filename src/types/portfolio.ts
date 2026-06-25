@@ -1,3 +1,5 @@
+import type { Component } from 'vue'
+
 export interface Skill {
   category: string
   items: string[]
@@ -11,10 +13,37 @@ export interface Experience {
   achievements: string[]
 }
 
+export interface Education {
+  type: string
+  degree: string
+  institution: string
+  year: string
+}
+
 export interface Project {
   title: string
   description: string
-  tags: string[]
+  coverImage?: string
+  tags: tech[]
+  link?: string
+  role?: string
+  isPublic: boolean
+  highlights?: string[]
+
+  longDescription?: string
+  github?: string
+  period?: string
+  challenge?: string
+  impact?: string
+  impactSummary?: string
+  features?: string[]
+}
+
+export interface tech {
+  id: string
+  label: string
+  colorClass: string
+  icon?: Component
 }
 
 export interface PortfolioData {

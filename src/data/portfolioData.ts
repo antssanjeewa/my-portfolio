@@ -1,34 +1,41 @@
-import type { Skill, Experience, Project } from '@/types/portfolio'
+import type { Skill, Experience, Education } from '@/types/portfolio'
 
 export const name = 'Sameera Sanjeewa'
 export const email = 'antssanjeewa94@gmail.com'
 export const mobile = '+94 71 255 4866'
-export const title = 'Senior Software Engineer | Full-Stack Developer'
+export const title = 'Software Engineer | Full-Stack Developer'
 export const bio =
-  'Innovative Software Engineer with over 6 years of experience in architecting high-performance web applications using PHP (Laravel) and Vue.js/Nuxt.js. Expert in AWS infrastructure and real-time APIs.'
+  'Innovative Software Engineer with 6+ years of experience engineering high-performance web applications. Specializing in backend architectures with Laravel and crafting fluid user interfaces with Vue.js. Focused on building secure, scalable enterprise systems, optimizing complex databases, and writing clean, future-proof code.'
 
 export const github = 'https://github.com/antssanjeewa'
 export const linkedin = 'https://linkedin.com/in/sameera-sanjeewa-ants'
 
-export const profile_link = '/src/assets/images/profile.png'
-export const resume_link = '/Sameera_Sanjeewa_CV.pdf'
+export const profile_link = '/images/profile.png'
+export const resume_link = '/resume/SAMEERA SANJEEWA.pdf'
 
 export const skills: Skill[] = [
   {
     category: 'Languages',
-    items: ['PHP (7.x, 8.x)', 'JavaScript (ES6+)', 'Dart', 'Python'],
+    items: ['PHP (7.x, 8.x)', 'JavaScript (ES6+)', 'TypeScript', 'Java', 'Python'],
   },
   {
-    category: 'Frameworks',
-    items: ['Laravel (Expert)', 'Vue.js 3', 'Nuxt.js', 'Flutter'],
+    category: 'Frameworks & State',
+    items: ['Laravel', 'Vue.js', 'React.js', 'Pinia / Vuex', 'Inertia.js', 'Flutter'],
   },
   {
     category: 'Backend & Cloud',
-    items: ['RESTful APIs', 'AWS (EC2, S3)', 'Docker', 'CI/CD', 'Nginx'],
+    items: ['RESTful APIs', 'AWS (EC2, S3)', 'Docker', 'CI/CD (GitHub Actions)', 'Nginx'],
   },
   {
-    category: 'Databases & Tools',
-    items: ['MySQL (Optimization)', 'Redis', 'TDD (PHPUnit)', 'Git'],
+    category: 'Databases & Quality Assurance',
+    items: [
+      'MySQL (Optimization)',
+      'Redis',
+      'TDD (Pest, PHPUnit)',
+      'E2E (Playwright, Dusk)',
+      'Git',
+      'Clean Architecture',
+    ],
   },
 ]
 
@@ -39,10 +46,10 @@ export const experiences: Experience[] = [
     location: 'Melbourne, Australia (Remote)',
     period: '2023 - 2026',
     achievements: [
-      'Architected Laravel-based backends supporting 200+ users, achieving 99.9% uptime.',
-      'Optimized AWS EC2 environments, enhancing application performance by 25%.',
-      'Integrated Twilio and Agora APIs for real-time messaging and video features.',
-      'Reduced deployment downtime by 40% through CI/CD and Docker orchestration.',
+      'Architected high-throughput Laravel backends supporting 200,000+ active users, achieving 99.9% uptime.',
+      'Optimized multi-tier AWS environments (EC2, RDS, S3, CloudFront), enhancing application performance by 25%.',
+      'Engineered real-time features integrating Twilio and Agora APIs for instant messaging and video streaming.',
+      'Designed and managed automated CI/CD pipelines (GitHub Actions, Docker) reducing deployment downtime by 40%.',
     ],
   },
   {
@@ -51,55 +58,37 @@ export const experiences: Experience[] = [
     location: 'Colombo, Sri Lanka',
     period: '2019 - 2023',
     achievements: [
-      'Developed core business apps using Laravel & Vue.js, reducing manual work by 40%.',
-      'Optimized complex MySQL queries, resulting in a 30% reduction in server load.',
-      'Designed and deployed a custom Donation Management System, improving accuracy by 35%.',
-      'Revamped UI/UX of legacy systems using Vue.js and Tailwind CSS.',
+      'Developed core business apps using Laravel & Vue.js, automating workflows and reducing manual work by 40%.',
+      'Optimized complex MySQL database schemas and query structures, resulting in a 30% reduction in production server load.',
+      'Designed and deployed a highly secure custom Donation Management System, improving accounting accuracy by 35%.',
+      'Modernized legacy interfaces into high-performance SPAs using Vue.js, Pinia, and Tailwind CSS.',
     ],
   },
 ]
 
-export const projects: Project[] = [
+export const education: Education[] = [
   {
-    title: 'Donation Management System',
-    description:
-      'A high-security platform with optimized MySQL reporting, automated receipts, and streamlined workflows.',
-    tags: ['Laravel', 'Vue.js', 'MySQL', 'Tailwind CSS'],
+    type: 'Undergraduate Degree',
+    degree: 'BSc (Eng) in Computer Engineering',
+    institution: 'University of Peradeniya, Sri Lanka',
+    year: '2015 – 2019',
   },
   {
-    title: 'Bookshop Application',
-    description:
-      'Full-stack system featuring a real-time inventory synchronization mechanism and API-first architecture.',
-    tags: ['Laravel', 'Vue 3', 'REST API', 'Redis'],
+    type: 'Certification',
+    degree: 'Full Stack Web Development',
+    institution: 'University of Moratuwa × DP Education',
+    year: '2022',
   },
   {
-    title: 'SIGreetings.com',
-    description:
-      'Scaled and maintained a cloud-based digital greeting platform with integrated production payment gateways.',
-    tags: ['PHP', 'Laravel', 'AWS', 'Payment Gateway'],
+    type: 'Certification',
+    degree: 'Flutter Mobile Development',
+    institution: 'Franklin Training Institute',
+    year: '2022',
   },
   {
-    title: 'SIGreetings.com',
-    description:
-      'Scaled and maintained a cloud-based digital greeting platform with integrated production payment gateways.',
-    tags: ['PHP', 'Laravel', 'AWS', 'Payment Gateway'],
-  },
-  {
-    title: 'SIGreetings.com',
-    description:
-      'Scaled and maintained a cloud-based digital greeting platform with integrated production payment gateways.',
-    tags: ['PHP', 'Laravel', 'AWS', 'Payment Gateway'],
-  },
-  {
-    title: 'SIGreetings.com',
-    description:
-      'Scaled and maintained a cloud-based digital greeting platform with integrated production payment gateways.',
-    tags: ['PHP', 'Laravel', 'AWS', 'Payment Gateway'],
-  },
-  {
-    title: 'SIGreetings.com',
-    description:
-      'Scaled and maintained a cloud-based digital greeting platform with integrated production payment gateways.',
-    tags: ['PHP', 'Laravel', 'AWS', 'Payment Gateway'],
+    type: 'Certification',
+    degree: 'OCJP — Oracle Certified Java Professional',
+    institution: 'Dakma Certification Center, Matara',
+    year: '2015',
   },
 ]
