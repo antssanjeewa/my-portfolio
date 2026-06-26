@@ -11,24 +11,24 @@ A premium, highly responsive, and data-driven portfolio web application designed
 
 ## ✨ Features
 
-*   **🌑 Elegant Dark-Mode Aesthetic:** Tailored dark theme featuring a customized slate/emerald palette, subtle glassmorphism headers, and smooth hover state micro-animations.
-*   **⚙️ 100% Data-Driven Architecture:** All portfolio contents (Bio, Experience, Skills, Projects, Contact info, Resume, and Social links) are completely decoupled from the UI markup and managed from a single configuration file.
-*   **📱 Fully Responsive & Fluid Layout:** Mobile-first design leveraging Tailwind CSS v4's modern utilities. Supports smooth scroll navigation and high-density displays.
-*   **🔍 Interactive Project Details:** Engaging UI featuring a custom modal dialog (`ProjectDialog.vue`) that showcases project descriptions, challenges, features, and business impacts.
-*   **⚡ Built for Performance:** Optimized with Vite 8, utilizing lightning-fast build times, lazy loading, and lightweight custom scrollbars.
-*   **🛡️ Robust Code Quality Tools:** Configured with TypeScript type-safety (`vue-tsc`), ESLint, Oxlint (ultra-fast linter), and Prettier.
+- **🌑 Elegant Dark-Mode Aesthetic:** Tailored dark theme featuring a customized slate/emerald palette, subtle glassmorphism headers, and smooth hover state micro-animations.
+- **⚙️ 100% Data-Driven Architecture:** All portfolio contents (Bio, Experience, Skills, Projects, Contact info, Resume, and Social links) are completely decoupled from the UI markup and managed from centralized configuration files.
+- **📱 Fully Responsive & Fluid Layout:** Mobile-first design leveraging Tailwind CSS v4's modern utilities. Supports smooth scroll navigation and high-density displays.
+- **🔍 Interactive Project Details:** Engaging UI featuring a custom modal dialog (`ProjectDialog.vue`) that showcases project descriptions, challenges, features, and business impacts.
+- **⚡ Built for Performance:** Optimized with Vite 8, utilizing lightning-fast build times, lazy loading, and lightweight custom scrollbars.
+- **🛡️ Robust Code Quality Tools:** Configured with TypeScript type-safety (`vue-tsc`), ESLint, Oxlint (ultra-fast linter), and Prettier.
 
 ---
 
 ## 🛠️ Tech Stack & Tooling
 
-*   **Core:** [Vue 3](https://vuejs.org/) (Composition API, `<script setup>`)
-*   **Language:** [TypeScript](https://www.typescriptlang.org/) (Strictly typed, type checking via `vue-tsc`)
-*   **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) (using `@import "tailwindcss"` & modern `@theme inline` configurations)
-*   **Routing:** [Vue Router](https://router.vuejs.org/)
-*   **Icons:** [Lucide Vue Next](https://lucide.dev/)
-*   **Build Tool:** [Vite 8](https://vite.dev/)
-*   **Linters & Formatters:** [Oxlint](https://github.com/oxc-project/oxc) (performance-driven JS/TS linter), [ESLint](https://eslint.org/), [Prettier](https://prettier.io/)
+- **Core:** [Vue 3](https://vuejs.org/) (Composition API, `<script setup>`)
+- **Language:** [TypeScript](https://www.typescriptlang.org/) (Strictly typed, type checking via `vue-tsc`)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) (using `@import "tailwindcss"` & modern `@theme inline` configurations)
+- **Routing:** [Vue Router](https://router.vuejs.org/)
+- **Icons:** [Lucide Vue Next](https://lucide.dev/)
+- **Build Tool:** [Vite 8](https://vite.dev/)
+- **Linters & Formatters:** [Oxlint](https://github.com/oxc-project/oxc) (performance-driven JS/TS linter), [ESLint](https://eslint.org/), [Prettier](https://prettier.io/)
 
 ---
 
@@ -43,14 +43,18 @@ src/
 │       └── main.css     # Tailwind CSS v4 directives, custom theme variables, & utility layer
 ├── components/         # Reusable Vue components
 │   ├── layout/         # Structural components (Header, Footer)
-│   ├── UI/             # Shared base UI components (Button, Card, ProjectDialog)
-│   └── sections/       # Independent page sections (Hero, About, Experience, Skills, Projects, Contact)
+│   ├── UI/             # Shared base UI components (ProjectDialog, ScrollToTop)
+│   └── sections/       # Independent page sections (Hero, About, Experience, Skills, Projects, Contact, Education)
+├── composables/        # Vue composables for reusable logic
 ├── data/               # Centralized data engine
-│   └── portfolioData.ts # Contains all dynamic profile information and project logs
+│   ├── portfolioData.ts    # Personal profile information (bio, skills, experience, education)
+│   ├── projectsData.ts     # Project showcase data with detailed metadata
+│   └── techsData.ts        # Technology stack definitions with icons and colors
+├── directives/         # Custom Vue directives
 ├── router/             # Vue Router configurations
 ├── types/              # Global TypeScript interface definitions
 ├── utils/              # Helper utilities
-├── views/              # High-level views (HomeView)
+├── views/              # High-level views (HomeView, NotFoundView)
 ├── App.vue             # Root application wrapper
 └── main.ts             # Application entry point
 ```
@@ -60,10 +64,12 @@ src/
 ## 🚀 Getting Started
 
 ### Prerequisites
-*   **Node.js:** `^22.18.0` or `>=24.12.0`
-*   **Package Manager:** `npm` (comes with Node.js)
+
+- **Node.js:** `^22.18.0` or `>=24.12.0`
+- **Package Manager:** `npm` (comes with Node.js)
 
 ### Installation
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/antssanjeewa/portfolio_web_app.git
@@ -75,32 +81,36 @@ src/
    ```
 
 ### Development Server
+
 Start the local Vite dev server with hot-module replacement (HMR):
+
 ```bash
 npm run dev
 ```
+
 Once started, open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
 ## 🛠️ Useful Commands
 
-| Command | Description |
-| :--- | :--- |
-| `npm run dev` | Runs the Vite development server locally |
-| `npm run build` | Type-checks code with `vue-tsc` and builds a minified production bundle in `dist/` |
-| `npm run preview` | Runs the production build locally for verification |
-| `npm run lint` | Lints the codebase using ESLint and Oxlint with auto-fix enabled |
-| `npm run format` | Formats all files inside `src/` using Prettier |
+| Command           | Description                                                                        |
+| :---------------- | :--------------------------------------------------------------------------------- |
+| `npm run dev`     | Runs the Vite development server locally                                           |
+| `npm run build`   | Type-checks code with `vue-tsc` and builds a minified production bundle in `dist/` |
+| `npm run preview` | Runs the production build locally for verification                                 |
+| `npm run lint`    | Lints the codebase using ESLint and Oxlint with auto-fix enabled                   |
+| `npm run format`  | Formats all files inside `src/` using Prettier                                     |
 
 ---
 
 ## ⚙️ Customization Guide
 
-Updating the portfolio's content is incredibly simple. All data is centralized in [src/data/portfolioData.ts](file:///home/ants/development/Others/portfolio_web_app/src/data/portfolioData.ts). 
+Updating the portfolio's content is incredibly simple. All data is centralized in the `src/data/` directory.
 
-### How to update your profile content:
-Simply open `src/data/portfolioData.ts` and modify the exported constants:
+### Profile Information
+
+Update your personal details in [src/data/portfolioData.ts](src/data/portfolioData.ts):
 
 ```typescript
 // Define your personal details
@@ -117,8 +127,10 @@ export const resume_link = '/resume/your-resume.pdf'
 export const profile_link = '/images/profile.png'
 ```
 
-### How to update skills:
-Skills are organized by category. Add, remove, or modify items within the `skills` array:
+### Skills
+
+Skills are organized by category in `portfolioData.ts`:
+
 ```typescript
 export const skills: Skill[] = [
   {
@@ -129,8 +141,10 @@ export const skills: Skill[] = [
 ]
 ```
 
-### How to update experience:
-Add achievements under your respective roles:
+### Experience
+
+Add achievements under your respective roles in `portfolioData.ts`:
+
 ```typescript
 export const experiences: Experience[] = [
   {
@@ -146,45 +160,70 @@ export const experiences: Experience[] = [
 ]
 ```
 
-### How to add/modify projects:
-Projects support rich metadata fields including challenges, feature highlights, and measurable business impact:
+### Education
+
+Update your educational background in `portfolioData.ts`:
+
 ```typescript
-export const projects: Project[] = [
+export const education: Education[] = [
   {
-    title: 'Project Title',
-    description: 'A brief description shown on the project card.',
-    longDescription: 'An in-depth explanation shown in the details modal.',
-    challenge: 'A paragraph detailing the technical challenge faced during development.',
-    features: [
-      'Key feature one description.',
-      'Key feature two description.',
-    ],
-    impact: '⚡ Measurable outcome (e.g., 40% performance boost, $10k saved).',
-    coverImage: '/images/projects/project-cover.jpeg',
-    tags: [Techs.laravel, Techs.vue, Techs.mysql],
+    type: 'Undergraduate Degree',
+    degree: 'BSc (Eng) in Computer Engineering',
+    institution: 'University of Peradeniya, Sri Lanka',
+    year: '2015 – 2019',
   },
 ]
 ```
+
+### Projects
+
+Projects are managed separately in [src/data/projectsData.ts](src/data/projectsData.ts) and support rich metadata fields including challenges, feature highlights, and measurable business impact:
+
+```typescript
+const MyProject: Project = {
+  title: 'Project Title',
+  role: 'Full Stack Developer',
+  coverImage: '/images/projects/project-cover.jpeg',
+  link: 'https://your-project.com',
+  isPublic: true,
+  description: 'A brief description shown on the project card.',
+  highlights: ['Key feature one description.', 'Key feature two description.'],
+  tags: [Techs.laravel, Techs.vue, Techs.mysql],
+}
+```
+
+### Technology Stack
+
+Customize technology icons and colors in [src/data/techsData.ts](src/data/techsData.ts) to match your project requirements.
 
 ---
 
 ## 🎨 Styling & Theming
 
-The layout uses a custom utility layer built on top of **Tailwind CSS v4**. Custom colors and variables are configured using standard CSS variables inside [src/assets/css/main.css](file:///home/ants/development/Others/portfolio_web_app/src/assets/css/main.css):
+The layout uses a custom utility layer built on top of **Tailwind CSS v4**. Custom colors and variables are configured using standard CSS variables inside [src/assets/css/main.css](src/assets/css/main.css):
 
-*   **Primary Theme Accent:** Emerald Green (`hsl(160 84% 39%)`)
-*   **Background:** Deep Slate (`hsl(224 71% 4%)` / `#020617`)
-*   **Typography:** The application imports and uses **Inter** as its primary typeface, utilizing optimized font features for high-legibility rendering (`font-feature-settings`).
+- **Primary Theme Accent:** Emerald Green (`hsl(160 84% 39%)`)
+- **Background:** Deep Slate (`hsl(224 71% 4%)` / `#020617`)
+- **Typography:** The application imports and uses **Inter** as its primary typeface, utilizing optimized font features for high-legibility rendering (`font-feature-settings`).
 
 To customize the primary brand colors, adjust the `--primary` HSL value inside `main.css`.
 
 ---
 
+## 📝 Recent Improvements
+
+- **Code Quality:** Added TypeScript typing to all components, fixed script setup typos, removed empty component files
+- **Content Updates:** Fixed experience dates to use "Present" instead of future dates, centralized About section data
+- **Theme Consistency:** Updated About section to use theme variables for proper dark mode support
+- **Cleanup:** Removed duplicate data files and unused components
+
+---
+
 ## 👤 Author & License
 
-*   **Author:** Sameera Sanjeewa
-*   **Email:** [antssanjeewa94@gmail.com](mailto:antssanjeewa94@gmail.com)
-*   **GitHub:** [@antssanjeewa](https://github.com/antssanjeewa)
-*   **LinkedIn:** [Sameera Sanjeewa](https://linkedin.com/in/sameera-sanjeewa-ants)
+- **Author:** Sameera Sanjeewa
+- **Email:** [antssanjeewa94@gmail.com](mailto:antssanjeewa94@gmail.com)
+- **GitHub:** [@antssanjeewa](https://github.com/antssanjeewa)
+- **LinkedIn:** [Sameera Sanjeewa](https://linkedin.com/in/sameera-sanjeewa-ants)
 
 This project is private and proprietary. All rights reserved.

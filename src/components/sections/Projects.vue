@@ -1,7 +1,8 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue'
 import { projects } from '@/data/projectsData'
 import { FolderClosed, ExternalLink, Github } from 'lucide-vue-next'
+import type { Project } from '@/types/portfolio'
 
 import ProjectDialog from '@/components/UI/ProjectDialog.vue'
 const projectsList = ref(projects)
@@ -14,9 +15,9 @@ const visibleProjects = computed(() => {
 })
 
 const isModalOpen = ref(false)
-const selectedProject = ref(null)
+const selectedProject = ref<Project | null>(null)
 
-const openProjectModal = (project) => {
+const openProjectModal = (project: Project) => {
   selectedProject.value = project
   isModalOpen.value = true
   document.body.style.overflow = 'hidden'
