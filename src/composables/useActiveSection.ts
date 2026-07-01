@@ -19,7 +19,7 @@ export function useActiveSection(sectionIds: string[]) {
         })
       },
       {
-        rootMargin: '-20% 0px -60% 0px',
+        rootMargin: '-50% 0px -40% 0px',
         threshold: 0,
       },
     )

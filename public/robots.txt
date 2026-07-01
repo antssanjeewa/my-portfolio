@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ant-sameera-sanjeewa.vercel.app/sitemap.xml

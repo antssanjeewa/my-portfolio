@@ -15,26 +15,43 @@ export const resume_link = '/resume/SAMEERA SANJEEWA.pdf'
 
 export const skills: Skill[] = [
   {
-    category: 'Languages',
-    items: ['PHP (7.x, 8.x)', 'JavaScript (ES6+)', 'TypeScript', 'Java', 'Python'],
-  },
-  {
-    category: 'Frameworks & State',
-    items: ['Laravel', 'Vue.js', 'React.js', 'Pinia / Vuex', 'Inertia.js', 'Flutter'],
-  },
-  {
-    category: 'Backend & Cloud',
-    items: ['RESTful APIs', 'AWS (EC2, S3)', 'Docker', 'CI/CD (GitHub Actions)', 'Nginx'],
-  },
-  {
-    category: 'Databases & Quality Assurance',
+    category: 'Architecture & Backend',
     items: [
-      'MySQL (Optimization)',
-      'Redis',
-      'TDD (Pest, PHPUnit)',
-      'E2E (Playwright, Dusk)',
-      'Git',
-      'Clean Architecture',
+      'PHP (7.x, 8.x) / OOP / Design Patterns',
+      'Laravel (Monolithic & Multi-tenant)',
+      'Java & Python Development',
+      'RESTful API Architecture & Design',
+      'Clean Architecture & SOLID Principles',
+    ],
+  },
+  {
+    category: 'Modern Frontend & State',
+    items: [
+      'Vue.js (2 & 3 with Composition API)',
+      'React.js & TypeScript',
+      'State Management (Pinia / Vuex)',
+      'Inertia.js & Laravel Blade Templates',
+      'Flutter (Cross-Platform Mobile Application)',
+    ],
+  },
+  {
+    category: 'Data Layer & Optimization',
+    items: [
+      'MySQL (Schema Design & Indexing)',
+      'Database Query Optimization',
+      'Redis Caching & Data Management',
+      'Firebase Realtime Database',
+      'Polymorphic Relations & Audit Trails',
+    ],
+  },
+  {
+    category: 'DevOps & Quality Assurance',
+    items: [
+      'AWS (EC2, S3) & Ubuntu VPS Management',
+      'Nginx Web Server Configuration',
+      'CI/CD (GitHub Actions) & Docker',
+      'TDD / Automated Testing (Pest, PHPUnit)',
+      'E2E Browser Testing (Playwright, Dusk)',
     ],
   },
 ]
