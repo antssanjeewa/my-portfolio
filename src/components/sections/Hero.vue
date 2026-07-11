@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { name, bio, profile_link } from '@/data/portfolioData'
 import { useTypingEffect } from '@/composables/useTypingEffect'
+import { MailIcon } from 'lucide-vue-next'
 
 const titles = ['Software Engineer.', 'Full-Stack Developer.']
 const { typedText } = useTypingEffect(titles)
@@ -56,9 +57,10 @@ const stats = [
           </a>
           <a
             href="#contact"
-            class="px-6 py-3 border border-border rounded-lg font-semibold hover:bg-muted/50 text-foreground transition-all hover:border-primary/40 hover:-translate-y-0.5 active:scale-95"
+            class="px-6 py-3 flex gap-2 items-center border border-border rounded-lg font-semibold hover:bg-muted/50 text-foreground transition-all hover:border-primary/40 hover:-translate-y-0.5 active:scale-95"
           >
-            ✉ Get In Touch
+            <MailIcon class="h-4 w-4" />
+            <span>Get In Touch</span>
           </a>
         </div>
 
