@@ -63,7 +63,7 @@ watch(isOpen, async (open) => {
     >
       <div
         v-if="isOpen"
-        class="flex h-[min(35rem,75dvh)] w-[min(25rem,92vw)] flex-col overflow-hidden rounded-2xl border border-border bg-card text-card-foreground shadow-2xl origin-bottom-right"
+        class="flex h-[min(35rem,75dvh)] w-[min(25rem,92vw)] flex-col overflow-hidden rounded-2xl border border-border bg-background text-card-foreground shadow-2xl origin-bottom-right"
         role="dialog"
         aria-label="Portfolio assistant chat"
       >

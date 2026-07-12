@@ -95,7 +95,6 @@ const stats = [
             alt="Sameera Sanjeewa - Senior Software Engineer"
             width="420"
             height="420"
-            loading="lazy"
             fetchpriority="high"
             class="mask-[linear-gradient(to_bottom,rgba(0,0,0,1)_85%,rgba(0,0,0,0)_100%)] w-full h-auto object-cover drop-shadow-[0_10px_20px_rgba(16,185,129,0.15)] filter grayscale-10 hover:grayscale-0 transition-all duration-500 transform hover:scale-[1.02]"
           />
