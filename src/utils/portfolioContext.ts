@@ -40,7 +40,6 @@ export function buildPortfolioContext(data: PortfolioData): string {
         data.contact.mobile ? `- Phone: ${data.contact.mobile}` : null,
         data.contact.linkedin ? `- LinkedIn: ${data.contact.linkedin}` : null,
         data.contact.github ? `- GitHub: ${data.contact.github}` : null,
-        data.contact.resumeLink ? `- Resume: ${data.contact.resumeLink}` : null,
       ].filter(Boolean)
     : []
   const contact = contactLines.length ? contactLines.join('\n') : null
