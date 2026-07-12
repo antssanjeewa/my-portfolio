@@ -4,7 +4,7 @@ import { Techs } from './techsData'
 const SermonProject: Project = {
   title: 'Sermon Manage Application',
   role: 'Full Stack Developer',
-  coverImage: '/images/projects/project_001.jpeg',
+  coverImage: '/images/projects/project_001.webp',
   link: 'https://adsw.smn.lk',
   isPublic: false,
   description:
@@ -25,7 +25,7 @@ const SermonProject: Project = {
 const OnlineProject: Project = {
   title: 'Online Payment Gateway Platform',
   role: 'Full Stack Developer',
-  coverImage: '/images/projects/project_003.jpeg',
+  coverImage: '/images/projects/project_003.webp',
   link: 'https://donate.shraddha.lk',
   isPublic: false,
   description:
@@ -46,7 +46,7 @@ const InventoryApp: Project = {
   title: 'Inventory Management System',
   description:
     'A secure, internal Inventory Management System designed for Ceyntics Systems (Pvt) Ltd to track tools, products, and electronic components across physical storage locations.',
-  coverImage: '/images/projects/project_002.jpeg',
+  coverImage: '/images/projects/project_002.webp',
   link: 'https://github.com/antssanjeewa/inventory_management_system',
   role: 'Full-Stack Developer',
   isPublic: true,
@@ -72,7 +72,7 @@ const vesakCardApp: Project = {
   title: 'Digital Vesak Greeting Card Generator',
   description:
     'A web application developed for Shraddha TV to allow users to generate personalized digital Vesak greeting cards with custom names and share them directly across social media platforms.',
-  coverImage: '/images/projects/project_004.jpeg',
+  coverImage: '/images/projects/project_004.webp',
   link: 'https://vesak.shraddha.tv',
   role: 'Full-Stack Developer',
   isPublic: false,
@@ -92,7 +92,7 @@ const bookShopApp: Project = {
   title: 'Book Stall & ERP System',
   description:
     'An internal Enterprise Resource Planning (ERP) and e-commerce management platform developed for Shraddha Media Network to streamline multi-role operations including employee tracking, cashier point-of-sale (POS) workflows, and financial accounts management.',
-  coverImage: '/images/projects/project_006.jpeg',
+  coverImage: '/images/projects/project_006.webp',
   role: 'Full-Stack Developer',
   isPublic: false,
   highlights: [
@@ -112,7 +112,7 @@ const donationManageApp: Project = {
   title: 'Donation Management Platform',
   description:
     'An enterprise-grade, multi-role, and multi-department internal ERP system designed for Shraddha Media Network to track and manage organization-wide donation records, automate monthly donor subscriptions, and generate digital merit certificates (Punyanumodana).',
-  coverImage: '/images/projects/project_005.jpeg',
+  coverImage: '/images/projects/project_005.webp',
   link: 'https://shraddha.tv',
   role: 'Full-Stack Developer',
   isPublic: false,
@@ -142,7 +142,7 @@ const hospotoApp: Project = {
   title: 'Hospoto — Job Board Platform',
   description:
     'A specialized full-stack recruitment platform and job board tailored for the hospitality industry, connecting employers with top-tier talent through smart job matching, interactive company profiles, and seamless application workflows.',
-  coverImage: '/images/projects/project_007.jpeg',
+  coverImage: '/images/projects/project_007.webp',
   link: 'https://hospoto.com.au/',
   role: 'Backend Software Engineer (PHP)',
   isPublic: false,
@@ -161,7 +161,7 @@ const parentSeekApp: Project = {
   title: 'Parent Seeking — Social Platform',
   description:
     'A secure, features-rich online dating and matchmaking web application specifically designed for single parents to connect, chat, and build meaningful relationships within a trusted community.',
-  coverImage: '/images/projects/project_008.jpeg',
+  coverImage: '/images/projects/project_008.webp',
   link: 'https://www.parentseeking.com.au',
   role: 'Backend Software Engineer (PHP)',
   isPublic: false,
@@ -189,7 +189,7 @@ const UTICApp: Project = {
   title: 'UTIC — Service & Logistics Platform',
   description:
     'An enterprise-grade on-demand service fulfillment and logistics ecosystem in Australia, powered by a robust centralized backend handling high-concurrency mobile application APIs, real-time tracking, and automated service matching.',
-  coverImage: '/images/projects/project_010.jpeg',
+  coverImage: '/images/projects/project_010.webp',
   link: 'https://www.utic.com.au/',
   role: 'Backend Software Engineer (PHP)',
   isPublic: false,
@@ -209,7 +209,7 @@ const AquaticTribeApp: Project = {
   title: 'Aquatic Tribe',
   description:
     'A comprehensive niche e-commerce and social community marketplace tailored for aquarium hobbyists and aquatic life enthusiasts, featuring streamlined product catalogs, secure checkout pipelines, and interactive user interactions.',
-  coverImage: '/images/projects/project_009.jpeg',
+  coverImage: '/images/projects/project_009.webp',
   link: 'https://www.aquatictribe.com/',
   role: 'Full-Stack Developer',
   isPublic: false,
@@ -228,7 +228,7 @@ const ExpenseTrackerApp: Project = {
   title: 'Expense Tracker App',
   description:
     'A cross-platform mobile application built as a hobby project to simplify personal finance tracking, featuring secure user authentication, instant cloud data synchronization, and dynamic expense categorizations.',
-  coverImage: '/images/projects/project_011.jpeg',
+  coverImage: '/images/projects/project_011.webp',
   link: 'https://github.com/antssanjeewa/smart_expense_tracker',
   role: 'Mobile Developer',
   isPublic: true,
@@ -244,7 +244,7 @@ const PeriodicApp: Project = {
   title: 'Periodic Table App',
   description:
     'An interactive, educational mobile application built to explore the chemical elements of the periodic table, providing structured data, atomic properties, and a highly visual chemical interface.',
-  coverImage: '/images/projects/project_012.jpeg',
+  coverImage: '/images/projects/project_012.webp',
   link: 'https://github.com/antssanjeewa/periodic_table_app',
   role: 'Mobile Developer',
   isPublic: true,

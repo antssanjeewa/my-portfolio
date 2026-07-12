@@ -124,7 +124,7 @@ export const mobile = '+123 456 7890'
 export const github = 'https://github.com/yourusername'
 export const linkedin = 'https://linkedin.com/in/yourusername'
 export const resume_link = '/resume/your-resume.pdf'
-export const profile_link = '/images/profile.png'
+export const profile_link = '/images/profile.webp'
 ```
 
 ### Skills
