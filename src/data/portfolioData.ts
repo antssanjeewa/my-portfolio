@@ -11,7 +11,7 @@ export const bio =
 export const github = 'https://github.com/antssanjeewa'
 export const linkedin = 'https://linkedin.com/in/sameera-sanjeewa-ants'
 
-export const profile_link = '/images/profile.png'
+export const profile_link = '/images/profile.webp'
 export const resume_link = '/resume/SAMEERA SANJEEWA.pdf'
 
 export const skills: Skill[] = [

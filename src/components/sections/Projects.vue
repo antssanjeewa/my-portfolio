@@ -56,6 +56,7 @@ const closeModal = () => {
             v-if="project.coverImage"
             :src="project.coverImage"
             :alt="project.title"
+            loading="lazy"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <!-- Elegant Fallback if Cover Image is missing -->
