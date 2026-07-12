@@ -21,7 +21,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
     <button
       v-if="isVisible"
       @click="scrollToTop"
-      class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/25 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer border border-primary/30"
+      class="w-11 h-11 rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/25 flex items-center justify-center hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer border border-primary/30"
       aria-label="Scroll to top"
     >
       <ArrowUp class="w-5 h-5" />

@@ -1,4 +1,5 @@
-import type { Skill, Experience, Education } from '@/types/portfolio'
+import type { Skill, Experience, Education, PortfolioData } from '@/types/portfolio'
+import { projects } from './projectsData'
 
 export const name = 'Sameera Sanjeewa'
 export const email = 'antssanjeewa94@gmail.com'
@@ -109,3 +110,19 @@ export const education: Education[] = [
     year: '2015',
   },
 ]
+
+export const portfolioData: PortfolioData = {
+  name,
+  title,
+  bio,
+  skills,
+  experiences,
+  education,
+  projects,
+  contact: {
+    email,
+    mobile,
+    github,
+    linkedin,
+  },
+}

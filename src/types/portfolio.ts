@@ -46,6 +46,13 @@ export interface tech {
   icon?: Component
 }
 
+export interface Contact {
+  email?: string
+  mobile?: string
+  github?: string
+  linkedin?: string
+}
+
 export interface PortfolioData {
   name: string
   title: string
@@ -53,4 +60,6 @@ export interface PortfolioData {
   skills: Skill[]
   experiences: Experience[]
   projects: Project[]
+  education: Education[]
+  contact?: Contact
 }
