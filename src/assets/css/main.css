@@ -31,7 +31,7 @@ body {
   --background: hsl(0 0% 100%); /* Pure White */
   --foreground: hsl(224 71% 4%); /* Deep Slate / Black text */
 
-  --primary: hsl(160 84% 39%); /* Emerald Green */
+  --primary: hsl(160 84% 28%); /* Emerald Green */
   --primary-foreground: hsl(0 0% 100%); /* White text on primary */
 
   --secondary: hsl(220 14.3% 95.9%); /* Light Gray */
@@ -54,7 +54,7 @@ body {
   --foreground: hsl(210 20% 98%); /* Slate 100 text */
 
   --primary: hsl(160 84% 45%); /* Bright Emerald Green (#10b981) */
-  --primary-foreground: hsl(210 20% 98%); /* Dark text inside green button */
+  --primary-foreground: hsl(0 0% 100%); /* text inside green button */
 
   --secondary: hsl(215 27.9% 16.9%); /* Slate 800 for secondary elements */
   --secondary-foreground: hsl(210 20% 98%);
