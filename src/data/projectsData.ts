@@ -94,6 +94,7 @@ const bookShopApp: Project = {
     'An internal Enterprise Resource Planning (ERP) and e-commerce management platform developed for Shraddha Media Network to streamline multi-role operations including employee tracking, cashier point-of-sale (POS) workflows, and financial accounts management.',
   coverImage: '/images/projects/project_006.webp',
   role: 'Full-Stack Developer',
+  link: 'https://bookshop.mahamevnawacollege.lk',
   isPublic: false,
   highlights: [
     'Took complete full-stack ownership of the ERP platform, developing both the multi-role backend logic and the unified frontend dashboard.',

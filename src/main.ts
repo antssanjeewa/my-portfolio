@@ -1,11 +1,10 @@
-import { createApp } from 'vue'
+import { ViteSSG } from 'vite-ssg'
 import App from './App.vue'
-import router from './router'
+import { routes } from './router'
 import revealDirective from './directives/reveal'
 
 import '@/assets/css/main.css'
 
-const app = createApp(App)
-app.directive('reveal', revealDirective)
-app.use(router).mount('#app')
-
+export const createApp = ViteSSG(App, { routes }, ({ app }) => {
+  app.directive('reveal', revealDirective)
+})
