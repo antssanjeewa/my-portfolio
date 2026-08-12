@@ -10,6 +10,9 @@ import type { Directive } from 'vue'
  */
 const revealDirective: Directive = {
   mounted(el: HTMLElement, binding) {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      return
+    }
     // Add the base reveal CSS class
     el.classList.add('reveal')
 
@@ -33,7 +36,10 @@ const revealDirective: Directive = {
         delay = binding.value
       } else if (typeof binding.value === 'object' && binding.value !== null) {
         if (binding.value.delay !== undefined) {
-          delay = typeof binding.value.delay === 'number' ? `${binding.value.delay}ms` : binding.value.delay
+          delay =
+            typeof binding.value.delay === 'number'
+              ? `${binding.value.delay}ms`
+              : binding.value.delay
         }
         if (binding.value.threshold !== undefined) {
           threshold = binding.value.threshold
@@ -58,8 +64,8 @@ const revealDirective: Directive = {
       },
       {
         threshold,
-        rootMargin: '0px 0px -40px 0px' // Triggers slightly before fully visible for smoother UX
-      }
+        rootMargin: '0px 0px -40px 0px', // Triggers slightly before fully visible for smoother UX
+      },
     )
 
     // Store observer reference on element for clean cleanup
@@ -68,10 +74,14 @@ const revealDirective: Directive = {
   },
   unmounted(el: HTMLElement) {
     if ((el as any)._revealObserver) {
-      (el as any)._revealObserver.disconnect()
+      ;(el as any)._revealObserver.disconnect()
       delete (el as any)._revealObserver
     }
-  }
+  },
+
+  getSSRProps() {
+    return {}
+  },
 }
 
 export default revealDirective
